@@ -1,0 +1,11 @@
+package com.tictactoepkg;
+
+public class TicTacToe {
+	String board[];
+	
+	public void displayBoard() {
+		System.out.println("\n"+board[0]+"|"+board[1]+"|" +board[2]);
+		System.out.println("\n"+board[3]+"|"+board[4]+"|" +board[5]);
+		System.out.println("\n"+board[6]+"|"+board[7]+"|" +board[8]);
+		}
+}
