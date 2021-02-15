@@ -5,12 +5,16 @@ import java.util.Scanner;
 public class TicTacToeMain {
 	static char user = 'x';
 	static char comp = 'o';
-
-	public static void displayBoard() {
+	char[] board = new char[10];
+	public static void display() {
 		char[] board = new char[10];
 		for (int i = 1; i < 10; i++) {
 			board[i] = ' ';
 		}
+	}
+	public static void displayBoard() {
+		char[] board = new char[10];
+		
 		System.out.println("" + board[1] + " | " + board[2] + " | " + board[3]);
 		System.out.println("----" + "----" + "--" + "");
 		System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
@@ -34,10 +38,28 @@ public class TicTacToeMain {
 			System.out.println("Invalid Input");
 	}
 	
-	
+	public static void takeInput() {
+		Scanner sc = new Scanner(System.in);
+		char[] board = new char[10];
+		
+		System.out.println("\n Enter the Position :");
+		int position = sc.nextInt();
+			if(position > 0 && position < 10) {
+				if(board[position] == ' ' ) {
+					board[position] = user;
+				}
+				else 
+					System.out.println("Position filled.");
+			}
+			else
+				System.out.println("Invalid position! please enter within 1-9");
+		}
+		
 	public static void main(String[] args) {
 		System.out.println("*****Welcome to the TicTacToe Game.*****");
 		inputLetter();
+		display();
+		takeInput();
 		displayBoard();
 	}
 }
