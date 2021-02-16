@@ -62,8 +62,6 @@ public class TicTacToeMain {
 		for (int index = 1; index < 10; index++) {
 			if (board[compPosition] == ' ')
 				makeMove(compPosition);
-				winnerCheck();
-				
 		}
 	}
 
@@ -138,9 +136,9 @@ public class TicTacToeMain {
 				break;
 			}
 			else if (index == 9)
-				return "Draw";
+				return "draw";
 		}
-		return "Winner is " + result;
+		return result;
 	}
 
 	private static void play() {
