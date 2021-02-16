@@ -35,12 +35,12 @@ public class TicTacToeMain {
 		if (val == 'x' || val == 'X') {
 			user = 'X';
 			comp = 'O';
-		} 
-		else if (val == 'o' || val == 'O') {
+			System.out.println("You are " + user + " and Computer is " + comp);
+		} else if (val == 'o' || val == 'O') {
 			user = 'O';
 			comp = 'X';
-		}
-		else
+			System.out.println("You are " + user + " and Computer is " + comp);
+		} else
 			System.out.println("Invalid Input");
 	}
 	
@@ -49,7 +49,7 @@ public class TicTacToeMain {
 		Scanner sc = new Scanner(System.in);
 		char[] board = new char[10];
 		
-		System.out.println("\nEnter the Position :");
+		System.out.println("\n Enter the Position :");
 		int position = sc.nextInt();
 			if(position > 0 && position < 10) {
 				if(board[position] != ' ' ) {
