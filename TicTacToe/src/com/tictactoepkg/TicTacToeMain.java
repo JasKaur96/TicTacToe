@@ -66,6 +66,6 @@ public class TicTacToeMain {
 		System.out.println("*****Welcome to the TicTacToe Game.*****");
 		inputLetter();
 		displayBoard();
-		makeMove();	
+		takePosition();	
 	}
 }
