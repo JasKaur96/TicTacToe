@@ -52,7 +52,7 @@ public class TicTacToeMain {
 					makeMove(position);
 				}
 				else 
-					System.out.println("Position filled.");
+					System.out.println("Position filled.");				
 			}
 			else
 				System.out.println("Invalid position! please enter within 1-9");
@@ -64,7 +64,6 @@ public class TicTacToeMain {
 			board[position] = user;
 		}	
 		displayBoard();
-		System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
 	}
 	
 	//Calls method to take input for position and displaying board.
