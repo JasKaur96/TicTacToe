@@ -55,9 +55,9 @@ public class TicTacToeMain {
 		}
 		else
 			System.out.println("Invalid position! please enter within 1-9");
-	
+		
 		displayBoard();
-		System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
+	System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
 	}
 
 	//Calls method to take input for position displaying board.

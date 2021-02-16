@@ -43,6 +43,24 @@ public class TicTacToeMain {
 			System.out.println("Invalid Input");
 	}
 	
+	// To take position value from user.
+//	public static void takePosition() {
+//		Scanner sc = new Scanner(System.in);
+//		char[] board = new char[10];
+//		System.out.println("\n Enter the Position :");
+//		int position = sc.nextInt();
+//		if(position > 0 && position < 10) {
+//			if(board[position] == ' ' ) {
+//				board[position] = user;
+//			}
+//			else 
+//				System.out.println("Position filled.");
+//				takePosition();
+//			}
+//		else
+//			System.out.println("Invalid position! please enter within 1-9");
+//	}
+	
 	//To make move to the position.
 	public static void makeMove() {
 		Scanner sc = new Scanner(System.in);
@@ -55,9 +73,9 @@ public class TicTacToeMain {
 		}
 		else
 			System.out.println("Invalid position! please enter within 1-9");
-	
+		
 		displayBoard();
-		System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
+	System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
 	}
 
 	//Calls method to take input for position displaying board.
@@ -65,6 +83,7 @@ public class TicTacToeMain {
 		System.out.println("*****Welcome to the TicTacToe Game.*****");
 		inputLetter();
 		display();
-		makeMove();	
+		makeMove();
+		
 	}
 }

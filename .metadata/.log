@@ -136,3 +136,18 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-02-16 11:32:24.389
+!MESSAGE An internal error occurred during: "Searching...".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-02-16 11:51:07.454
+!MESSAGE An internal error occurred during: "Searching...".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-02-16 11:51:15.717
+!MESSAGE An internal error occurred during: "Searching...".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
