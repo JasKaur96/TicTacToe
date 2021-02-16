@@ -30,12 +30,12 @@ public class TicTacToeMain {
 		if (val == 'x' || val == 'X') {
 			user = 'X';
 			comp = 'O';
-			System.out.println("You are " + user + " and Computer is " + comp);
-		} else if (val == 'o' || val == 'O') {
+		}
+		else if (val == 'o' || val == 'O') {
 			user = 'O';
 			comp = 'X';
-			System.out.println("You are " + user + " and Computer is " + comp);
-		} else
+		}
+		else
 			System.out.println("Invalid Input");
 	}
 	
