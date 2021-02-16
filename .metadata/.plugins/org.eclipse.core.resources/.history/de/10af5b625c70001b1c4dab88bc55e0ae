@@ -51,14 +51,14 @@ public class TicTacToeMain {
 				makeMove(position);
 			} else
 				System.out.println("Position filled.");
-		}
-		else
+		} else
 			System.out.println("Invalid position! please enter within 1-9");
 	}
 
 	// Computer's turn
 	private static void compTurn() {
 		int compPosition = (int) (Math.floor(Math.random() * 10) + 1);
+		System.out.println("Toss :" + compPosition);
 		for (int i = 1; i < 10; i++) {
 			if (board[compPosition] == ' ')
 				makeMove(compPosition);
