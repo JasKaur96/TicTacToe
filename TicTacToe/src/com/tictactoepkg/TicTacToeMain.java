@@ -16,8 +16,7 @@ public class TicTacToeMain {
 	}
 	
 	//Display empty board
-	public static void displayBoard() {
-//		char[] board = new char[10];		
+	public static void displayBoard() {	
 		System.out.println("" + board[1] + " | " + board[2] + " | " + board[3]);
 		System.out.println("----" + "----" + "--" + "");
 		System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
@@ -43,28 +42,25 @@ public class TicTacToeMain {
 			System.out.println("Invalid Input");
 	}
 	
-	//To make move to the position.
+	//To check position availablity before making a move.
 	public static void makeMove() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\n Enter the Position :");
 		int position = sc.nextInt();
 		if(position > 0 && position < 10) {
-			for (int i = 1; i < 10; i++) {
-				board[position] = user;
-			}
-		}
-		else
+			if (board[position] == ' ')
+				System.out.println("Position available.");	}
+			else
+				System.out.println("Position filled.");
+		} else
 			System.out.println("Invalid position! please enter within 1-9");
-	
-		displayBoard();
-		System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
 	}
 
 	//Calls method to take input for position displaying board.
 	public static void main(String[] args) {
 		System.out.println("*****Welcome to the TicTacToe Game.*****");
 		inputLetter();
-		display();
+		displayBoard();
 		makeMove();	
 	}
 }
