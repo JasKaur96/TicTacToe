@@ -134,8 +134,7 @@ public class TicTacToeMain {
 		for (int index = 1; index < 9; index++) {
 			if (Arrays.asList(board).contains(String.valueOf(index))) {
 				break;
-			}
-			else if (index == 9)
+			} else if (index == 9)
 				return "draw";
 		}
 		return result;

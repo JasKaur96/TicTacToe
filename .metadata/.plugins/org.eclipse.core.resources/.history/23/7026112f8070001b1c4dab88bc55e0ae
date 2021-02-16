@@ -1,5 +1,4 @@
 package com.tictactoepkg;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -58,7 +57,7 @@ public class TicTacToeMain {
 
 	// Computer's turn
 	private static void compTurn() {
-		int compPosition = (int) (Math.floor(Math.random() * 10) );
+		int compPosition = (int) (Math.floor(Math.random() * 10) + 1);
 		for (int index = 1; index < 10; index++) {
 			if (board[compPosition] == ' ')
 				makeMove(compPosition);
@@ -125,31 +124,23 @@ public class TicTacToeMain {
 				result = new StringBuilder().append(board[3]).append(board[6]).append(board[9]).toString();
 				break;
 			}
-			if (result.equals("XXX"))
+			if(result.equals("XXX")) 
 				return "X";
-			else if (result.equals("OOO"))
-				return "O";
+			 else if (result.equals("OOO")) 
+				return "O";			
 		}
-		// Loop to check if draw.
-		for (int index = 1; index < 9; index++) {
+		
+		for(int index = 1; index < 9 ; index++) {
 			if (Arrays.asList(board).contains(String.valueOf(index))) {
 				break;
-			}
-			else if (index == 9)
+			} else if (index == 9) 
 				return "draw";
 		}
-		return result;
-	}
-
-	private static void play() {
-		String winner = null;
-		while (winner == null) {
-			if(turn == "user") {
-				compTurn();
-			}
-			else
-				takePosition();
+		if(turn == "user") {
+			compTurn();
 		}
+		else
+			takePosition();
 	}
 
 	// Calls method to take input for position and displaying board.
@@ -159,7 +150,6 @@ public class TicTacToeMain {
 		inputLetter();
 		display();
 		toss();
-		play();
 		winnerCheck();
 	}
 }

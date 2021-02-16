@@ -58,7 +58,7 @@ public class TicTacToeMain {
 
 	// Computer's turn
 	private static void compTurn() {
-		int compPosition = (int) (Math.floor(Math.random() * 10) );
+		int compPosition = (int) (Math.floor(Math.random() * 10) + 1);
 		for (int index = 1; index < 10; index++) {
 			if (board[compPosition] == ' ')
 				makeMove(compPosition);
@@ -134,11 +134,9 @@ public class TicTacToeMain {
 		for (int index = 1; index < 9; index++) {
 			if (Arrays.asList(board).contains(String.valueOf(index))) {
 				break;
-			}
-			else if (index == 9)
+			} else if (index == 9)
 				return "draw";
 		}
-		return result;
 	}
 
 	private static void play() {

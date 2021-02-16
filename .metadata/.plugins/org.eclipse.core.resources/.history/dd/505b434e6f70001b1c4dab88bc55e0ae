@@ -1,6 +1,5 @@
 package com.tictactoepkg;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TicTacToeMain {
@@ -12,7 +11,7 @@ public class TicTacToeMain {
 	// Initialize empty board.
 	private static void display() {
 		for (int index = 1; index < 10; index++) {
-			board[index] = ' ';
+			board[i] = ' ';
 		}
 	}
 
@@ -52,13 +51,14 @@ public class TicTacToeMain {
 				makeMove(position);
 			} else
 				System.out.println("Position filled.");
-		} else
+		}
+		else
 			System.out.println("Invalid position! please enter within 1-9");
 	}
 
 	// Computer's turn
 	private static void compTurn() {
-		int compPosition = (int) (Math.floor(Math.random() * 10) );
+		int compPosition = (int) (Math.floor(Math.random() * 10) + 1);
 		for (int index = 1; index < 10; index++) {
 			if (board[compPosition] == ' ')
 				makeMove(compPosition);
@@ -92,63 +92,13 @@ public class TicTacToeMain {
 			System.out.println("It's computer's turn first!");
 			compTurn();
 		}
-
+		
 	}
-
-	// To check who won the game.
-	private static String winnerCheck() {
-		String result = null;
-		for (int i = 1; i < 10; i++) {
-			switch (i) {
-			case 1:
-				result = new StringBuilder().append(board[1]).append(board[2]).append(board[3]).toString();
-				break;
-			case 2:
-				result = new StringBuilder().append(board[4]).append(board[5]).append(board[6]).toString();
-				break;
-			case 3:
-				result = new StringBuilder().append(board[7]).append(board[8]).append(board[9]).toString();
-				break;
-			case 4:
-				result = new StringBuilder().append(board[1]).append(board[5]).append(board[9]).toString();
-				break;
-			case 5:
-				result = new StringBuilder().append(board[3]).append(board[5]).append(board[7]).toString();
-				break;
-			case 6:
-				result = new StringBuilder().append(board[2]).append(board[5]).append(board[8]).toString();
-				break;
-			case 7:
-				result = new StringBuilder().append(board[1]).append(board[3]).append(board[7]).toString();
-				break;
-			case 8:
-				result = new StringBuilder().append(board[3]).append(board[6]).append(board[9]).toString();
-				break;
-			}
-			if (result.equals("XXX"))
-				return "X";
-			else if (result.equals("OOO"))
-				return "O";
-		}
-		// Loop to check if draw.
-		for (int index = 1; index < 9; index++) {
-			if (Arrays.asList(board).contains(String.valueOf(index))) {
-				break;
-			}
-			else if (index == 9)
-				return "draw";
-		}
-		return result;
-	}
-
-	private static void play() {
-		String winner = null;
-		while (winner == null) {
-			if(turn == "user") {
-				compTurn();
-			}
-			else
-				takePosition();
+	
+	//To check who won the game.
+	private static void winnerCheck() {
+		for(int index = 1; index < 10; index++) {
+			
 		}
 	}
 
@@ -159,7 +109,5 @@ public class TicTacToeMain {
 		inputLetter();
 		display();
 		toss();
-		play();
-		winnerCheck();
 	}
 }
