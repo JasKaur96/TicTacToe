@@ -43,18 +43,23 @@ public class TicTacToeMain {
 	}
 	
 	//To check position availablity before making a move.
-	public static void makeMove() {
+	public static void takePosition() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\n Enter the Position :");
+		char[] board = new char[10];
+		System.out.println("\nEnter the Position :");
 		int position = sc.nextInt();
-		if(position > 0 && position < 10) {
-			if (board[position] == ' ')
-				System.out.println("Position available.");	}
+			if(position > 0 && position < 10) {
+				if(board[position] != ' ' ) {
+					System.out.println("Position available.");
+				}
+				else 
+					System.out.println("Position filled.");
+			}
 			else
-				System.out.println("Position filled.");
-		} else
-			System.out.println("Invalid position! please enter within 1-9");
+				System.out.println("Invalid position! please enter within 1-9");
+			
 	}
+
 
 	//Calls method to take input for position displaying board.
 	public static void main(String[] args) {
