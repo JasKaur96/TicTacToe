@@ -59,102 +59,11 @@ public class TicTacToeMain {
 	// Computer's turn
 	private static void compTurn() {
 		int compPosition = (int) (Math.floor(Math.random() * 10) );
-		boolean win = false;
 		for (int index = 1; index < 10; index++) {
 			if (board[compPosition] == ' ')
 				makeMove(compPosition);
-				winnerCheck();	
-		}
-		
-		for (int i = 1; i < 10; i++) {
-			switch(i) {
-			case 1:
-				  if( (board[2] == compPosition && board[3] == compPosition)
-                          || (board[4] == compPosition && board[7] == compPosition)
-                          || (board[5] == compPosition && board[9] == compPosition) ) {
-                                            
-					  if (board[compPosition] == ' ') {
-						  	makeMove(compPosition);
-					  		win = true;			
-					  }
-				  }
-				  break;
-			case 2:
-				  if( (board[1] == compPosition && board[3] == compPosition)
-                          || (board[5] == compPosition && board[8] == compPosition)) {
-                                            
-					  if (board[compPosition] == ' ') {
-						  	makeMove(compPosition);
-					  		win = true;			
-					  }
-				  }
-			  case 3:
-                  if( (board[1] == compPosition && board[2] == compPosition)
-                          || (board[6] == compPosition && board[9] == compPosition)
-                          || (board[5] == compPosition && board[7] == compPosition) ) {
-                      if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;	
-                      }
-                  }
-                  break;
-              case 4:
-                  if( (board[1] == compPosition && board[7] == compPosition)
-                          || (board[5] == compPosition && board[6] == compPosition) ) {
-                      if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
-                      }
-                  }
-                  break;
-              case 5:
-                  if( (board[1] == compPosition && board[9] == compPosition)                         || (board[3] == compPosition && board[7] == compPosition)
-                          || (board[2] == compPosition && board[8] == compPosition) ) {
-                	  if (board[i] == ' ') {
-                     	  makeMove(compPosition);
- 					  	  win = true;
-                      }
-                  }
-                  break;
-              case 6:
-                  if( (board[3] == compPosition && board[9] == compPosition)
-                          || (board[4] == compPosition && board[5] == compPosition)) {
-               	   if (board[i] == ' ') {
-                    	makeMove(compPosition);
-					  	win = true;
-                      }
-                  }
-                  break;
-              case 7:
-                  if( (board[1] == compPosition && board[4] == compPosition)
-                          || (board[5] == compPosition && board[3] == compPosition)
-                          || (board[8] == compPosition && board[9] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
-                      }
-                  }
-                  break;
-               case 8:
-                  if( (board[7] == compPosition && board[9] == compPosition)
-                          || (board[2] == compPosition && board[5] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
-                      }
-                  }
-                  break;
-             case 9:
-                  if( (board[8] == compPosition && board[7] == compPosition)
-                          || (board[6] == compPosition && board[3] == compPosition)
-                          || (board[5] == compPosition && board[1] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
-                      }
-                  }
-                  break;
-			}
+				winnerCheck();
+				
 		}
 	}
 
@@ -227,7 +136,8 @@ public class TicTacToeMain {
 		for (int index = 1; index < 9; index++) {
 			if (Arrays.asList(board).contains(String.valueOf(index))) {
 				break;
-			} else if (index == 9)
+			}
+			else if (index == 9)
 				return "Draw";
 		}
 		return "Winner is " + result;
@@ -236,9 +146,10 @@ public class TicTacToeMain {
 	private static void play() {
 		String winner = null;
 		while (winner == null) {
-			if (turn == "user") {
+			if(turn == "user") {
 				compTurn();
-			} else
+			}
+			else
 				takePosition();
 		}
 	}

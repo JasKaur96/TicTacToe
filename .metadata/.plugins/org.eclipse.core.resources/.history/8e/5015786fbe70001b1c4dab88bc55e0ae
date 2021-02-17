@@ -66,8 +66,8 @@ public class TicTacToeMain {
 				winnerCheck();	
 		}
 		
-		for (int i = 1; i < 10; i++) {
-			switch(i) {
+		for (int index = 1; index < 10; index++) {
+			switch(index) {
 			case 1:
 				  if( (board[2] == compPosition && board[3] == compPosition)
                           || (board[4] == compPosition && board[7] == compPosition)
@@ -110,47 +110,48 @@ public class TicTacToeMain {
               case 5:
                   if( (board[1] == compPosition && board[9] == compPosition)                         || (board[3] == compPosition && board[7] == compPosition)
                           || (board[2] == compPosition && board[8] == compPosition) ) {
-                	  if (board[i] == ' ') {
-                     	  makeMove(compPosition);
- 					  	  win = true;
+                      if (board[i] == ' ') {
+                    	  makeMove(compPosition);
+					  	  win = true;
                       }
                   }
                   break;
-              case 6:
+              case 6:compPosition
                   if( (board[3] == compPosition && board[9] == compPosition)
                           || (board[4] == compPosition && board[5] == compPosition)) {
-               	   if (board[i] == ' ') {
-                    	makeMove(compPosition);
-					  	win = true;
+                      if	  makeMove(compPosition);
+				  	  win = true;
+                  }
                       }
                   }
                   break;
-              case 7:
+                 case 7:
                   if( (board[1] == compPosition && board[4] == compPosition)
                           || (board[5] == compPosition && board[3] == compPosition)
                           || (board[8] == compPosition && board[9] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
+                      if (board[i] == ' ') {
+                          board[i] = compPosition;
+                          win = false;
                       }
                   }
                   break;
                case 8:
                   if( (board[7] == compPosition && board[9] == compPosition)
-                          || (board[2] == compPosition && board[5] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
+                          || (board[2] == compChoice && board[5] == compChoice) ) {
+                      if (board[i] == ' ') {
+                          board[i] = compPosition;
+                          win = false;
                       }
                   }
                   break;
-             case 9:
-                  if( (board[8] == compPosition && board[7] == compPosition)
-                          || (board[6] == compPosition && board[3] == compPosition)
-                          || (board[5] == compPosition && board[1] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
+             \ i.e., if (6,3)(8,7)(1,5) is equal then the computer plays at position 9 */
+              case 9:
+                  if( (board[8] == compChoice && board[7] == compChoice)
+                          || (board[6] == compChoice && board[3] == compChoice)
+                          || (board[5] == compChoice && board[1] == compChoice) ) {
+                      if (board[i] == ' ') {
+                          board[i] = compChoice;
+                          win = false;
                       }
                   }
                   break;

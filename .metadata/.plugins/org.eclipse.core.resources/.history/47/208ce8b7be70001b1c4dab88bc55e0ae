@@ -110,37 +110,38 @@ public class TicTacToeMain {
               case 5:
                   if( (board[1] == compPosition && board[9] == compPosition)                         || (board[3] == compPosition && board[7] == compPosition)
                           || (board[2] == compPosition && board[8] == compPosition) ) {
-                	  if (board[i] == ' ') {
+                	
+                	   if (board[i] == ' ') {
                      	  makeMove(compPosition);
  					  	  win = true;
-                      }
+                       }
                   }
                   break;
               case 6:
                   if( (board[3] == compPosition && board[9] == compPosition)
                           || (board[4] == compPosition && board[5] == compPosition)) {
-               	   if (board[i] == ' ') {
-                    	makeMove(compPosition);
-					  	win = true;
-                      }
+                	   if (board[i] == ' ') {
+                     	  makeMove(compPosition);
+ 					  	  win = true;
+                       }
                   }
                   break;
               case 7:
                   if( (board[1] == compPosition && board[4] == compPosition)
                           || (board[5] == compPosition && board[3] == compPosition)
                           || (board[8] == compPosition && board[9] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
+                      if (board[i] == ' ') {
+                          board[i] = compPosition;
+                          win = false;
                       }
                   }
                   break;
                case 8:
                   if( (board[7] == compPosition && board[9] == compPosition)
                           || (board[2] == compPosition && board[5] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
+                      if (board[i] == ' ') {
+                          board[i] = compPosition;
+                          win = false;
                       }
                   }
                   break;
@@ -148,9 +149,9 @@ public class TicTacToeMain {
                   if( (board[8] == compPosition && board[7] == compPosition)
                           || (board[6] == compPosition && board[3] == compPosition)
                           || (board[5] == compPosition && board[1] == compPosition) ) {
-               	   if (board[i] == ' ') {
-                    	  makeMove(compPosition);
-					  	  win = true;
+                      if (board[i] == ' ') {
+                          board[i] = compPosition;
+                          win = false;
                       }
                   }
                   break;
