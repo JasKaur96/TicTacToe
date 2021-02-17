@@ -383,3 +383,23 @@ java.lang.OutOfMemoryError: Requested array size exceeds VM limit
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-02-17 08:52:48.479
+!MESSAGE An internal error occurred during: "Searching...".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-02-17 08:52:54.723
+!MESSAGE An internal error occurred during: "Searching...".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-02-17 08:52:59.097
+!MESSAGE An internal error occurred during: "Searching...".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-02-17 21:20:59.003
+!MESSAGE An internal error occurred during: "Searching...".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit

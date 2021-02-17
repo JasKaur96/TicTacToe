@@ -63,7 +63,7 @@ public class TicTacToeMain {
 	// Computer's turn
 	private static void compTurn() {
 		int compPosition = (int) (Math.floor(Math.random() * 10) );
-//		boolean win = false;
+		boolean win = false;
 		for (int index = 1; index < 10; index++) {
 			if (board[compPosition] == ' ') {
 				makeMove(compPosition);
@@ -74,6 +74,97 @@ public class TicTacToeMain {
 				continue;
 		}
 	}	
+//		for (int i = 1; i < 10; i++) {
+//			switch(i) {
+//			case 1:
+//				  if( (board[2] == compPosition && board[3] == compPosition)
+//                          || (board[4] == compPosition && board[7] == compPosition)
+//                          || (board[5] == compPosition && board[9] == compPosition) ) {
+//                                            
+//					  if (board[compPosition] == ' ') {
+//						  	makeMove(compPosition);
+//					  		win = true;			
+//					  }
+//				  }
+//				  break;
+//			case 2:
+//				  if( (board[1] == compPosition && board[3] == compPosition)
+//                          || (board[5] == compPosition && board[8] == compPosition)) {
+//                                            
+//					  if (board[compPosition] == ' ') {
+//						  	makeMove(compPosition);
+//					  		win = true;			
+//					  }
+//				  }
+//			  case 3:
+//                  if( (board[1] == compPosition && board[2] == compPosition)
+//                          || (board[6] == compPosition && board[9] == compPosition)
+//                          || (board[5] == compPosition && board[7] == compPosition) ) {
+//                      if (board[i] == ' ') {
+//                    	  makeMove(compPosition);
+//					  	  win = true;	
+//                      }
+//                  }
+//                  break;
+//              case 4:
+//                  if( (board[1] == compPosition && board[7] == compPosition)
+//                          || (board[5] == compPosition && board[6] == compPosition) ) {
+//                      if (board[i] == ' ') {
+//                    	  makeMove(compPosition);
+//					  	  win = true;
+//                      }
+//                  }
+//                  break;
+//              case 5:
+//                  if( (board[1] == compPosition && board[9] == compPosition)                         || (board[3] == compPosition && board[7] == compPosition)
+//                          || (board[2] == compPosition && board[8] == compPosition) ) {
+//                	  if (board[i] == ' ') {
+//                     	  makeMove(compPosition);
+// 					  	  win = true;
+//                      }
+//                  }
+//                  break;
+//              case 6:
+//                  if( (board[3] == compPosition && board[9] == compPosition)
+//                          || (board[4] == compPosition && board[5] == compPosition)) {
+//               	   if (board[i] == ' ') {
+//                    	makeMove(compPosition);
+//					  	win = true;
+//                      }
+//                  }
+//                  break;
+//              case 7:
+//                  if( (board[1] == compPosition && board[4] == compPosition)
+//                          || (board[5] == compPosition && board[3] == compPosition)
+//                          || (board[8] == compPosition && board[9] == compPosition) ) {
+//               	   if (board[i] == ' ') {
+//                    	  makeMove(compPosition);
+//					  	  win = true;
+//                      }
+//                  }
+//                  break;
+//               case 8:
+//                  if( (board[7] == compPosition && board[9] == compPosition)
+//                          || (board[2] == compPosition && board[5] == compPosition) ) {
+//               	   if (board[i] == ' ') {
+//                    	  makeMove(compPosition);
+//					  	  win = true;
+//                      }
+//                  }
+//                  break;
+//             case 9:
+//                  if( (board[8] == compPosition && board[7] == compPosition)
+//                          || (board[6] == compPosition && board[3] == compPosition)
+//                          || (board[5] == compPosition && board[1] == compPosition) ) {
+//               	   if (board[i] == ' ') {
+//                    	  makeMove(compPosition);
+//					  	  win = true;
+//                      }
+//                  }
+//                  break;
+//			}
+//		}
+//	}
 
 	// To make a move to the position.
 	private static void makeMove(int position) {
@@ -81,11 +172,9 @@ public class TicTacToeMain {
 			if (turn == "user") {
 				board[position] = user;
 				turn = "comp";
-				winnerCheck();
 			} else {
 				board[position] = comp;
 				turn = "user";
-				winnerCheck();
 			}
 		}
 		displayBoard();
@@ -146,25 +235,29 @@ public class TicTacToeMain {
 		if((board[3] == board[5]) && (board[5] == board[7]))
 			result = board[3];
 		System.out.println(board[3]+" wins");
-			   
+		// Check if the board is full
+//		for (int index = 1; index < 10; index++) {
+//			if (board[index] == ' ') {
+////				System.out.println("Full board.");
+//			}
+//		}		   
 	}
 
 	private static void play() {
 		while (true) {
 			if (board_filled == 9) {
-				System.out.println("It's a draw!");
+				System.out.println("No more turn left");
 				System.exit(0);
 				break;
 			}
 			toss();
-		}
-		while (board_filled < 9) {
+			
+		while (winner == null) {
 			if (turn == "user") {
 				compTurn();
 			} else
 				takePosition();
 		}
-		 winnerCheck();
 	}
 
 	// Calls method to take input for position and displaying board.
@@ -172,7 +265,11 @@ public class TicTacToeMain {
 
 		System.out.println("*****Welcome to the TicTacToe Game.*****");
 		inputLetter();
-		display();		
+		display();
+		
 		play();
+//		winnerCheck();
+		
+		
 	}
 }
