@@ -1,6 +1,7 @@
 package com.tictactoepkg;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TicTacToeMain {
@@ -58,12 +59,25 @@ public class TicTacToeMain {
 
 	// Computer's turn
 	private static void compTurn() {
-		blockWinner();
-		cornerCheck();
 		int compPosition = (int) (Math.floor(Math.random() * 10) );
 		for (int index = 1; index < 10; index++) {
 			if (board[compPosition] == ' ')
 				makeMove(compPosition);
+			try {
+				// input = sc.nextInt();
+				if (!(compPosition > 0 && compPosition <= 9)) {
+					System.out.println("Invalid input! Re-enter position:");
+					continue;
+				}
+			}
+			catch (InputMismatchException e) {
+				System.out.println("Invalid input! Re-enter position:");
+				continue;
+			}
+		makeMove(compPosition);
+		displayBoard();
+		winTie();
+		displayBoard();
 		}
 	}
 
@@ -77,7 +91,6 @@ public class TicTacToeMain {
 				board[position] = comp;
 				turn = "user";
 			}
-			winTie();
 		} 
 	}
 
@@ -165,12 +178,46 @@ public class TicTacToeMain {
         else if (board[9] == ' ') return 9;
         return 0;
 	}
+	//Gives the status of board
+//		static void populateEmptyBoard() {
+//			for (int index = 0; index < 9; index++) {
+//				board[index] = String.valueOf(index + 1);
+//			}
+//		}
+		
+	static void playGame() {
+		displayBoard();
+		toss();
+		String winner = null;
+		while (winner == null) {
+			if(turn == "user") {
+			// play for computer
+			compTurn();
+			toss();
+			displayBoard();
+			winTie();
+			displayBoard();
+			}
+			else {
+			// play for players user
+			takePosition();
+			toss();
+			displayBoard();
+			winTie();
+			displayBoard();
+			}
+		}	
+		if (winner.equalsIgnoreCase("draw")) 
+			System.out.println("It's a Draw");
+		else 
+			System.out.println("Congratulations! " + winner + " has won! Thanks for playing.");
+	}
 		
 	// Calls method to take input for position and displaying board.
 	public static void main(String[] args) {
 		System.out.println("*****Welcome to the TicTacToe Game.*****");
 		inputLetter();
 		display();
-		toss();
+		playGame();
 	}
 }
