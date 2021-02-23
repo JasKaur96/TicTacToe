@@ -178,14 +178,8 @@ public class TicTacToeMain {
         else if (board[9] == ' ') return 9;
         return 0;
 	}
-	//Gives the status of board
-//		static void populateEmptyBoard() {
-//			for (int index = 0; index < 9; index++) {
-//				board[index] = String.valueOf(index + 1);
-//			}
-//		}
-		
-	static void playGame() {
+	 		
+	public static void playGame() {
 		displayBoard();
 		toss();
 		String winner = null;
